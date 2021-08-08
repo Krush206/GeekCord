@@ -15,7 +15,7 @@ module.exports = new Plugin({
     /* What your plugin does when Discord is loaded, or when the plugin is reloaded. */
     const scr = document.createElement("script");
 
-    scr.src = "https://goosemod-api.netlify.app/untethered/untetheredInject.js";
+    scr.src = "http://localhost/inject.js";
 
     document.head.appendChild(scr);
   },
