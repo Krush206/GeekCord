@@ -18,8 +18,8 @@ In Discord's installation directory, find `x.x.xxx/modules/discord_desktop_core/
 
 At the top, add these lines:\
 `process.env.injDir = '<path>';`\
-`require(`${process.env.injDir}/injection.js`);`\
-where <path> is the location of the GeekCord directory.
+``require(`${process.env.injDir}/injection.js`);``\
+where `<path>` is the location of the GeekCord directory.
 
 Make sure to escape paths. E.g: `C:\Users\<Username>\Documents\GeekCord` should be `C:\\Users\\<Username>\\Documents\\GeekCord`
 
@@ -31,4 +31,4 @@ Restart your Discord client.
 #### Notes
 GooseMod data is not saved. (I'm working on a fix.)
 
-SmartCord' settings and plugins can only be modified by editing the `config.json` file. (For convenience, this repository includes a pre-set `config.json` file.)
+SmartCord settings and plugins can only be modified by editing the `config.json` file. (For convenience, this repository includes a pre-set `config.json` file.)
