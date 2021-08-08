@@ -23,7 +23,7 @@ where `<path>` is the location of the GeekCord directory.
 
 Make sure to escape paths. E.g: `C:\Users\<Username>\Documents\GeekCord` should be `C:\\Users\\<Username>\\Documents\\GeekCord`
 
-Install [BusyBox-w32](https://frippery.org/busybox) (Windows; install to `Windows` directory) or BusyBox (GNU/Linux, macOS) and run *httpd*:\
+Install [BusyBox-w32](https://frippery.org/busybox) (Windows; install to `Windows` directory) or BusyBox ([GNU/Linux](https://busybox.net/downloads/binaries), [macOS](https://github.com/xdevs23/busybox-osx)) and run *httpd*:\
 `busybox httpd -p 127.0.0.1 -h <path/to/GeekCord/API>`
 
 Restart your Discord client.
