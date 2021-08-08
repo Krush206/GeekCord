@@ -1,52 +1,34 @@
-# SmartCord
-A lightweight client mod based on EnhancedDiscord designed to enhance your Discord experience without slowing down your PC.
+# GeekCord
+A fork and continuation of SmartCord and GooseMod Untethered.
 
-Support server:
-(https://discord.gg/F25bc4RYDt or https://guilded.gg/SmartCord)
+#### Disclaimer
+**Using GeekCord, or any other client mod, is against [Discord's Terms of Service](https://discordapp.com/terms). Use it at your own risk.**\
+It's very unlikely any action will be taken against you (if you don't abuse), but we take no responsibility if anything happens.
 
-#### DISCLAIMER!
-> **Using SmartCord, or any other client mod, is against [Discord's Terms of Service](https://discordapp.com/terms). Use it at your own risk.**
-> *It's very unlikely any action will be taken against you (if you don't api abuse), but we take no responsibility if anything happens.*
+#### Installing
+Download/clone this repository to wherever you want your GeekCord files to reside.
 
-### Installing
-Discord Stable is recommended.
-Currently only Windows has fully working installer, Linux is experimental but first method should work:   
+Find Discord's installation directory:\
+Windows: `%homepath%\AppData\Local\discord`\
+macOS: `~/Library/Application Support/discord`\
+GNU/Linux: `~/.config/discord`\
+Replace `discord` with `discordcanary` as needed.
 
-1.Windows - Use installer from latest release. (SmartCord.exe)   
+In Discord's installation directory, find `x.x.xxx/modules/discord_desktop_core/index.js`, where `x.x.xxx` is your current version of the Discord client, and open it.
 
-2.Linux - https://github.com/smartfrigde/LinuxSC   
+At the top, add these lines:\
+`process.env.injDir = '<path>';`\
+`require(`${process.env.injDir}/injection.js`);`\
+where <path> is the location of the GeekCord directory.
 
-### Themes
+Make sure to escape paths. E.g: `C:\Users\<Username>\Documents\GeekCord` should be `C:\\Users\\<Username>\\Documents\\GeekCord`
 
-By default, the official [EnhancedDiscord/SmartCord theme](https://smartfrigde.github.io/smartcord/smartcord.css) is loaded along with a plugin that allows you to change settings of it in **User Settings** > SmartCord > **Settings**. For more info on how to change/edit your theme, see the [FAQ](https://github.com/smartfrigde/smartcord/wiki/FAQ).
+Install [BusyBox-w32](https://frippery.org/busybox) (Windows; install to `Windows` directory) or BusyBox (GNU/Linux, macOS) and run *httpd*:\
+`busybox httpd -p 127.0.0.1 -h <path/to/GeekCord/API>`
 
-### Plugins
+Restart your Discord client.
 
-A list of included plugins and their purpose is included on the [plugins wiki page](https://github.com/smartfrigde/smartcord/wiki/Plugins). It also includes some sources for finding new SC plugins.
+#### Notes
+GooseMod data is not saved. (I'm working on a fix.)
 
-### GooseMod Plugins/Themes Support
-
-SmartCord 1.6 and newer now support GooseMod Plugins and Themes! Enable it in your settings.
-
-### Custom plugins
-
-For info about how to create your own plugins, check out the [custom plugins wiki page](https://github.com/joe27g/EnhancedDiscord/wiki/Custom-plugins).
-
-### Having issues?
-
-First, check out the [FAQ](https://github.com/smartfrigde/smartcord/wiki/FAQ) to see if your issue is listed there. If not, ask in #support in the support server (link below.)
-
-### Suggestions? Comments?
-
-Feel free to chat in our [support server](https://discord.gg/F25bc4RYDt). We have a #suggestions channel as well as many others to discuss SmartCord and other topics.
-
-### Contributing
-
-Feel free to make pull requests or make your own plugins repository. If you do make your own plugins, request the 'Plugin Developer' role in the support server so you can announce your releases!
-
-### Security or lack of it
-Modding your Discord client is not secure. It tweaks Discord security so **unofficial** plugins and themes can load. If you take security very seriously then don't use **any** mod client. But if you don't install unknown plugins nothing bad will happen *probably*. When using plugins that are included with SmartCord there's really small chance of you getting any harm. Stay safe and don't download plugins from shady sources.
-
-### Credits
-
-Big shotout to EnhancedDiscord developers and plugin makers. This project is just "personalized" fork of EnhancedDiscord that wants to continue it's development in it's own way. I'm not experienced coder and I suck lol. Don't expect high tier coding or good coding at all. I used few scripts/snippets shared on EnhancedDiscord server huge thanks to developers of those. I also used parts of GooseMod code for it's support and ported plugins.
+SmartCord' settings and plugins can only be modified by editing the `config.json` file. (For convenience, this repository includes a pre-set `config.json` file.)
